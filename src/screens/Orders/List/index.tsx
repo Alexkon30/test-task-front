@@ -5,10 +5,10 @@ import { observer } from "mobx-react-lite";
 import OrdersListState from "./store";
 import { OrdersListItem } from "./types";
 
-import Button from "../../../components/Button";
 import AngleLeftIcon from "../../../assets/icons/angle-left-solid.svg";
 import AngleRightIcon from "~/assets/icons/angle-right-solid.svg";
 import ListItem from "./components/ListItem";
+import { Button } from "~/components";
 
 const OrdersList = observer(
   (): JSX.Element => {
@@ -17,7 +17,8 @@ const OrdersList = observer(
     useEffect(() => {
       if (state.initialized) return;
       state.initialize();
-    });
+      // eslint-disable-next-line
+    }, []);
 
     return (
       <React.Fragment>
@@ -37,7 +38,7 @@ const OrdersList = observer(
                 </div>
                 <div className={styles.body}>
                   {map(state.orders, (order: OrdersListItem, index: number) => (
-                    <ListItem order={order} key={index} />
+                    <ListItem order={order} key={index} index={index}/>
                   ))}
                 </div>
               </div>

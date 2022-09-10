@@ -2,10 +2,31 @@
 
 .row
   min-height 64px
+  display grid
+  grid-template-columns: 1fr 5fr 6fr 3fr 4fr
+  padding 10px 20px
+  margin 7px 0
+  border-radius: 6px
+  text-decoration: none
+  color $primary-dark
+
+  &:visited
+    color $primary-dark
+
+  &:hover
+    transform: scale(1.02)
+    cursor pointer
+
+  &_first
+    background-color: $main-brown
+
+  &_second
+    background-color: $second-brown
 
   div
     display flex
-    align-items center
+    justify-content: center
+    align-items: center
 
     div
       width 80%

@@ -21,7 +21,7 @@ const isCorrectFormat = (dateString: string): boolean => {
   return moment(dateString, format, true).isValid();
 };
 
-const DatePicker = observer(
+export const DatePicker = observer(
   ({ date, onChange, triggerRef }: Props, ref): JSX.Element => {
     const [state] = React.useState(new DatePickerState());
     const [element] = React.useState(document.createElement("div"));
@@ -88,5 +88,3 @@ const DatePicker = observer(
   },
   { forwardRef: true }
 );
-
-export default DatePicker;

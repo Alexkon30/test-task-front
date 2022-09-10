@@ -14,7 +14,7 @@ interface Props {
   onClick: () => void
 }
 
-function Button({
+export const Button = ({
   text,
   icon,
   rightIcon,
@@ -24,7 +24,7 @@ function Button({
   color,
   small,
   onClick,
-}: Props) {
+}: Props) => {
   const Icon = icon || rightIcon || 'div'
   return (
     <button
@@ -49,5 +49,3 @@ function Button({
     </button>
   )
 }
-
-export default Button

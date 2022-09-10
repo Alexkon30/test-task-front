@@ -1,14 +1,14 @@
-import Tag from "components/Tag";
 import React from "react";
 import { useGlobalState } from "~/screens/globalState";
 import { find } from "lodash";
 import { observer } from "mobx-react-lite";
+import { Tag } from "..";
 
 interface StatusProps {
   code: string;
 }
 
-const OrderStatus = observer(
+export const OrderStatus = observer(
   ({ code }: StatusProps): JSX.Element => {
     const globalState = useGlobalState();
     const name = find(globalState.orderStatuses, { code })?.name || code;
@@ -28,5 +28,3 @@ const OrderStatus = observer(
     return <Tag text={name} color={color} />;
   }
 );
-
-export default OrderStatus;

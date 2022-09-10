@@ -7,7 +7,7 @@ interface Props {
   text: string;
 }
 
-const Tag = ({ color, text }: Props): JSX.Element => {
+export const Tag = ({ color, text }: Props): JSX.Element => {
   return (
     <div
       className={classNames({
@@ -22,5 +22,3 @@ const Tag = ({ color, text }: Props): JSX.Element => {
     </div>
   );
 };
-
-export default Tag;
